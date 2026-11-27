@@ -156,7 +156,6 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="lamp"] { --height: 29%; }
 .ornament-slot[data-item="turntable"] { --height: 20%; --width: 30%; }
 .ornament-slot[data-item="chrome"] { --height: 34%; --width: 22%; }
-.ornament-slot[data-item="crab"] { --height: 17%; --width: 24%; }
 .ornament-slot[data-item="bronze"] { --height: 36%; --width: 19%; }
 .ornament-slot[data-item="speaker"] { --height: 33%; --width: 22%; }
 .ornament-slot[data-item="censer"] { --height: 21%; --width: 19%; }
@@ -164,7 +163,6 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
   --height: 22%; --width: 20%;
   --side-offset: calc((100% - var(--size) - var(--width)) / 2 + 2.5%);
 }
-.ornament-slot[data-item="bookend"][data-side="right"] img { transform: scaleX(-1); }
 .ornament-slot[data-item="wavebox"] { --height: 18%; --width: 25%; }
 .ornament-slot[data-item="pleat"] { --height: 33%; --width: 20%; }
 .ornament-slot[data-item="flask"] { --height: 28%; --width: 17%; }
@@ -172,30 +170,18 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="lava"] { --height: 26%; --width: 19%; }
 .ornament-slot[data-item="medal"] { --height: 26%; --width: 18%; }
 .ornament-slot[data-item="linenlamp"] { --height: 35%; --width: 22%; }
-.ornament-slot[data-item="cassettes"] { --height: 18%; --width: 25%; }
 .ornament-slot[data-item="drapery"] { --height: 30%; --width: 20%; }
 .ornament-slot[data-item="eggshell"] { --height: 32%; --width: 25%; }
 .ornament-slot[data-item="puck"] { --height: 12%; --width: 20%; }
 .ornament-slot[data-item="ewer"] { --height: 31%; --width: 18%; }
-.ornament-slot[data-item="porcelainloop"] { --height: 28%; --width: 24%; }
 .ornament-slot[data-item="opaline"] { --height: 34%; --width: 23%; }
-.ornament-slot[data-item="murano"] { --height: 25%; --width: 22%; }
-.ornament-slot[data-item="catalin"] { --height: 24%; --width: 27%; }
-.ornament-slot[data-item="rohdeclock"] { --height: 32%; --width: 23%; }
 .ornament-slot[data-item="hoffmannink"] { --height: 20%; --width: 23%; }
-.ornament-slot[data-item="airflow"] { --height: 36%; --width: 24%; }
 .ornament-slot[data-item="scarpa"] { --height: 22%; --width: 25%; }
 .ornament-slot[data-item="bugattibase"] { --height: 17%; --width: 25%; }
-.ornament-slot[data-item="cantu"] { --height: 31%; --width: 24%; }
 .ornament-slot[data-item="musebronze"] { --height: 29%; --width: 22%; }
 .ornament-slot[data-item="bugattimirror"] { --height: 36%; --width: 17%; }
 .ornament-slot[data-item="leafbronzelamp"] { --height: 37%; --width: 22%; }
-.ornament-slot[data-item="whitehandwheel"] { --height: 21%; --width: 25%; }
-.ornament-slot[data-item="buffachair"] { --height: 29%; --width: 23%; }
-.ornament-slot[data-item="ruhlmann"] { --height: 29%; --width: 24%; }
 .ornament-slot[data-item="clusterlamp"] { --height: 36%; --width: 24%; }
-.ornament-slot[data-item="muranocup"] { --height: 18%; --width: 22%; }
-.ornament-slot[data-item="hookstand"] { --height: 24%; --width: 23%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -378,179 +364,146 @@ const variants = {
   }
 };
 const objects = {
-  ruhlmann: {
-    name: "乌木边柜", description: "从收藏标题里的 Ruhlmann 边柜出发，用对称木纹、收窄的柜腿和小菱形嵌饰做成原创缩尺柜。",
-    image: 'assets/ruhlmann.png'
-  },
   clusterlamp: {
+    number: "01",
     name: "棱镜集群灯", description: "从 Holophane / Ritter 牙医集群灯的收藏标题出发，把三个棱纹玻璃灯头聚在一根可见关节的支臂上。",
     light: 'prism',
     image: 'assets/clusterlamp.png'
   },
-  muranocup: {
-    name: "条纹玻璃咖啡杯", description: "从收藏标题里的 1970 年代意大利 Murano 古董咖啡杯出发，用琥珀玻璃与深浅色条做一套小杯碟。",
-    image: 'assets/muranocup.png'
-  },
-  hookstand: {
-    name: "折钢唱片支架", description: "从 The Row 巴黎店收藏笔记里的 Charlotte Perriand 衣帽钩借形，让弯折的钢件露出与胡桃木底座的连接。",
-    image: 'assets/hookstand.png'
-  },
   bugattimirror: {
+    number: "02",
     name: "嵌饰立镜", description: "从约 1900 年 Carlo Bugatti 镜子的收藏笔记借用乌木、羊皮纸和金属嵌饰。窄框立起，让镜面在唱片旁保留一条亮边。",
     image: 'assets/bugattimirror.png'
   },
   leafbronzelamp: {
+    number: "03",
     name: "三足叶形灯", description: "取材于收藏里标为 1937 年的 Alberto Giacometti 青铜台灯。让三根细支脚和叶形节点之间透出背景。",
     light: 'bronze',
     image: 'assets/leafbronzelamp.png'
   },
-  whitehandwheel: {
-    name: "手轮缝纫机", description: "从 White 中古缝纫机的收藏标题出发，设计一台带铸铁悬臂和侧手轮的案头模型。",
-    image: 'assets/whitehandwheel.png'
-  },
-  buffachair: {
-    name: "胡桃木扶手椅", description: "从收藏里的 1940 年代意大利 Paolo Buffa 扶手椅借用实心胡桃木与布艺的组合，做成带弧形扶手的缩尺椅。",
-    image: 'assets/buffachair.png'
-  },
   scarpa: {
+    number: "04",
     name: "威尼斯玻璃灯", description: "从 Carlo Scarpa 与 Venini 的玻璃、黄铜灯具借材质。用低矮的肋纹玻璃罩配黄铜托架，点亮时可以看灯罩边缘的光。",
     light: 'venetian',
     image: 'assets/scarpa.png'
   },
   bugattibase: {
+    number: "05",
     name: "嵌饰唱片托", description: "从 Carlo Bugatti 边桌提取深木、浅色嵌面与金属接缝，缩成一座带卡槽的小托座。",
     image: 'assets/bugattibase.png'
   },
-  cantu: {
-    name: "意式矮展柜", description: "从意大利 La Permanente di Cantù 木制书柜的收藏参考出发，改成三格错落的小型展柜。",
-    image: 'assets/cantu.png'
-  },
   musebronze: {
+    number: "06",
     name: "铸铜日环", description: "从 Filippo Carandini《Muse》系列的砂模铸铜与天文意象出发，做成一件带错位圆盘的青铜立件。",
     image: 'assets/musebronze.png'
   },
-  catalin: {
-    name: "琥珀树脂收音机", description: "取材于 1930 至 1940 年代美国 Catalin 台式收音机。用琥珀色树脂、酒红边带和横向扬声器格栅强调流线。",
-    source: ["SFO Museum · On the Radio", "https://www.sfomuseum.org/exhibitions/radio/gallery"],
-    image: 'assets/catalin.png'
-  },
-  rohdeclock: {
-    name: "装饰艺术座钟", description: "取材于 Gilbert Rohde 约 1933 年的电钟。把烟色圆表盘架在斜向镀铬支撑与黑色阶梯底座上。",
-    source: ["大都会艺术博物馆 · Gilbert Rohde 座钟", "https://www.metmuseum.org/art/collection/search/490893"],
-    image: 'assets/rohdeclock.png'
-  },
   hoffmannink: {
+    number: "07",
     name: "维也纳格栅墨水座", description: "取材于 Josef Hoffmann 约 1910 年的格栅墨水座。原创造型以深色黄铜和玻璃重组方格与方盒。",
     source: ["大都会艺术博物馆 · Josef Hoffmann 墨水座", "https://www.metmuseum.org/art/collection/search/481693"],
     image: 'assets/hoffmannink.png'
   },
-  airflow: {
-    name: "流线珐琅台扇", description: "取材于 Robert Heller 的 1937 年 Airflow 台扇，用弧形底座和深绿珐琅机身表现流线轮廓。",
-    source: ["蒙特利尔美术馆藏 · Airflow 台扇", "https://partnersindesign.org/object/table-fan-airflow/"],
-    image: 'assets/airflow.png'
-  },
   stone: {
+    number: "08",
     name: '太湖石', description: '从孔洞和不规则边缘借形。灰石的镂空会随相邻物件显出不同层次。',
     image: 'assets/stone.png'
   },
   lamp: {
+    number: "09",
     name: '玻璃灯', description: '取 Albano Poli 收藏里的玻璃材质作灯罩。开灯可以对比暖光在木架上的范围。',
     light: 'warm',
     image: 'assets/lamp.png'
   },
   turntable: {
+    number: "10",
     name: '黑胶唱机', description: '低矮的乌木色机身保留盘面、唱臂与唱标，适合放在正在浏览的唱片旁。',
     image: 'assets/turntable.png'
   },
   chrome: {
+    number: "11",
     name: '镀铬台灯', description: '取 Elio Martinelli 收藏帖里的镀铬材质做一盏细臂灯，开灯可试偏冷的照明。',
     light: 'cool',
     image: 'assets/chrome.png'
   },
-  crab: {
-    name: '银蟹盒', description: '从银质螃蟹置物盒的收藏索引借形。低位陈列，让细足和银壳的亮面留在视线下方。',
-    image: 'assets/crab.png'
-  },
   bronze: {
+    number: "12",
     name: '铜雕', description: '从雕塑收藏笔记里的拉长与重组出发，做成两条铜带交叠的抽象立件。',
     image: 'assets/bronze.png'
   },
   speaker: {
+    number: "13",
     name: '书架音箱', description: '从音响收藏延伸出胡桃木箱体和织物网罩，试摆在唱片旁看体量。',
     image: 'assets/speaker.png'
   },
   censer: {
+    number: "14",
     name: '镂空香炉', description: '从被中香炉的收藏线索出发，用带细孔的暗黄铜球和浅托架做成小摆件。',
     image: 'assets/censer.png'
   },
-  bookend: {
-    name: '炭木唱片挡', description: '从家具展的陈列线索延伸出一个带台阶的炭黑木块。摆上后靠近唱片边缘。',
-    image: 'assets/bookend.png'
-  },
   wavebox: {
+    number: "15",
     name: '海浪匣', description: '从手工珠宝盒的收藏索引提取海浪意象，用青蓝釉面做成一道隆起的盒盖。',
     image: 'assets/wavebox.png'
   },
   pleat: {
+    number: "16",
     name: '褶瓷立件', description: '由陶瓷与服装互相借形的收藏笔记延伸，把织物般的竖褶定格在哑光瓷片上。',
     image: 'assets/pleat.png'
   },
   flask: {
+    number: "17",
     name: '银化玻璃瓶', description: '从古罗马玻璃香水瓶的收藏线索借来细颈轮廓，用淡蓝玻璃和银紫色反光表现表面。',
     image: 'assets/flask.png'
   },
   recordbin: {
+    number: "18",
     name: '翻片箱', description: '从爵士唱片店的收藏线索出发，把高低错落的纸封套做成一组小比例陈列。',
     image: 'assets/recordbin.png'
   },
   lava: {
+    number: "19",
     name: '火山釉陶瓶', description: '以中古陶瓶收藏为起点，用炭灰胎和带针孔的赭黄釉做出明暗分层。',
     image: 'assets/lava.png'
   },
   medal: {
+    number: "20",
     name: '声纹铜章', description: '参考金属章收藏里的浮雕形式，把唱片的沟槽转成章面上交错的弧线。',
     image: 'assets/medal.png'
   },
   linenlamp: {
+    number: "21",
     name: '布罩台灯', description: '从收藏里的彩绘石膏和布艺组合出发，把浅色布罩搭在灰绿石膏灯座上。开灯可试柔和的白光。',
     light: 'soft',
     image: 'assets/linenlamp.png'
   },
-  cassettes: {
-    name: '磁带架', description: '从音乐收纳的收藏线索延伸出一只铝托，斜立的磁带露出两个卷盘。',
-    image: 'assets/cassettes.png'
-  },
   drapery: {
+    number: "22",
     name: '覆布石雕', description: '从雕塑收藏中提取下垂的布褶，用浅色石材表现垂坠的重量和阴影。',
     image: 'assets/drapery.png'
   },
   eggshell: {
+    number: "23",
     name: '蛋壳漆屏', description: '从蛋壳大漆屏风收藏借来黑漆与象牙白碎纹的对比，缩成三扇微折的桌面屏。',
     image: 'assets/eggshell.png'
   },
   puck: {
+    number: "24",
     name: '黄铜唱片镇', description: '从早期唱片制作的收藏线索出发，把盘面沟槽转成唱片镇上的同心圆。',
     image: 'assets/puck.png'
   },
   ewer: {
+    number: "25",
     name: '水晶执壶', description: '取水晶执壶收藏里的通透瓶身和金色金属组合，用清浅的切面保留瓶体反光。',
     image: 'assets/ewer.png'
   },
-  porcelainloop: {
-    name: "交环瓷雕", description: "从陶艺收藏延伸出一对斜交的瓷环。透过两个孔洞可以看见架后的明暗。",
-    image: 'assets/porcelainloop.png'
-  },
   opaline: {
+    number: "26",
     name: "乳白玻璃灯", description: "乳白玻璃碟搭在橄榄色石座上，点亮后能看见漫开的微暖白光。",
     light: 'opal',
     image: 'assets/opaline.png'
-  },
-  murano: {
-    name: "蓝绿玻璃结", description: "从吹制玻璃收藏里提取蓝绿玻璃的叠色，让弯曲的玻璃带围出透空。",
-    image: 'assets/murano.png'
   }
 };
-const newestObjects = new Set(["ruhlmann", "clusterlamp", "muranocup", "hookstand"]);
+const newestObjects = new Set(["clusterlamp", "bugattimirror", "leafbronzelamp", "scarpa"]);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -579,7 +532,7 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'ruhlmann', right: 'clusterlamp' };
+const shelf = { left: 'bugattimirror', right: 'clusterlamp' };
 const sideNames = { left: '左侧', right: '右侧' };
 const litLamps = new Set(['clusterlamp']);
 let selectedObject = 'clusterlamp';
@@ -672,7 +625,7 @@ for (const id of [...newestObjects, ...olderObjects]) {
   const thumbnail = document.createElement('img');
   thumbnail.src = item.image;
   thumbnail.alt = '';
-  button.append(thumbnail, item.name);
+  button.append(thumbnail, item.number + ' · ' + item.name);
   button.addEventListener('click', () => selectObject(id));
   objectPicker.append(button);
 }
