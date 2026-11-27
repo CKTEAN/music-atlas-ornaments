@@ -2,6 +2,8 @@
 
 共 36 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
 
+本仓库收录 52 件摆件。下方展示 36 件，另外 16 件可在[往批摆件归档](archive/)中下载。
+
 ## 古董设计参考
 
 - 琥珀树脂收音机 · [SFO Museum · On the Radio](https://www.sfomuseum.org/exhibitions/radio/gallery)
