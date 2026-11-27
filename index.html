@@ -188,6 +188,10 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="bugattibase"] { --height: 17%; --width: 25%; }
 .ornament-slot[data-item="cantu"] { --height: 31%; --width: 24%; }
 .ornament-slot[data-item="musebronze"] { --height: 29%; --width: 22%; }
+.ornament-slot[data-item="bugattimirror"] { --height: 36%; --width: 17%; }
+.ornament-slot[data-item="leafbronzelamp"] { --height: 37%; --width: 22%; }
+.ornament-slot[data-item="whitehandwheel"] { --height: 21%; --width: 25%; }
+.ornament-slot[data-item="buffachair"] { --height: 29%; --width: 23%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -216,6 +220,8 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="opaline"][data-lit="true"] img { filter: brightness(1.17) drop-shadow(0 0 14px #fcf4db80); }
 .lamp-glow[data-tone="venetian"] { --core: #ffcb7e62; --falloff: #e7a15c29; }
 .ornament-slot[data-item="scarpa"][data-lit="true"] img { filter: brightness(1.23) drop-shadow(0 0 11px #ffd59982); }
+.lamp-glow[data-tone="bronze"] { --core: #ffd58c65; --falloff: #c78f4b2c; }
+.ornament-slot[data-item="leafbronzelamp"][data-lit="true"] img { filter: brightness(1.17) drop-shadow(0 0 12px #ffd28f80); }
 .lamp-glow[data-tone="soft"] { --core: #f6ebc664; --falloff: #e8dfbf30; }
 [data-mode="objects"] { --side-offset: 19%; --ground: 13%; --size: min(50%, 304px); align-self: start; }
 [data-mode="objects"] .workspace {
@@ -366,6 +372,23 @@ const variants = {
   }
 };
 const objects = {
+  bugattimirror: {
+    name: "嵌饰立镜", description: "从约 1900 年 Carlo Bugatti 镜子的收藏笔记借用乌木、羊皮纸和金属嵌饰。窄框立起，让镜面在唱片旁保留一条亮边。",
+    image: 'assets/bugattimirror.png'
+  },
+  leafbronzelamp: {
+    name: "三足叶形灯", description: "取材于收藏里标为 1937 年的 Alberto Giacometti 青铜台灯。让三根细支脚和叶形节点之间透出背景。",
+    light: 'bronze',
+    image: 'assets/leafbronzelamp.png'
+  },
+  whitehandwheel: {
+    name: "手轮缝纫机", description: "从 White 中古缝纫机的收藏标题出发，设计一台带铸铁悬臂和侧手轮的案头模型。",
+    image: 'assets/whitehandwheel.png'
+  },
+  buffachair: {
+    name: "胡桃木扶手椅", description: "从收藏里的 1940 年代意大利 Paolo Buffa 扶手椅借用实心胡桃木与布艺的组合，做成带弧形扶手的缩尺椅。",
+    image: 'assets/buffachair.png'
+  },
   scarpa: {
     name: "威尼斯玻璃灯", description: "从 Carlo Scarpa 与 Venini 的玻璃、黄铜灯具借材质。用低矮的肋纹玻璃罩配黄铜托架，点亮时可以看灯罩边缘的光。",
     light: 'venetian',
@@ -504,7 +527,7 @@ const objects = {
     image: 'assets/murano.png'
   }
 };
-const newestObjects = new Set(["scarpa", "bugattibase", "cantu", "musebronze"]);
+const newestObjects = new Set(["bugattimirror", "leafbronzelamp", "whitehandwheel", "buffachair"]);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -533,10 +556,10 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'musebronze', right: 'scarpa' };
+const shelf = { left: 'whitehandwheel', right: 'leafbronzelamp' };
 const sideNames = { left: '左侧', right: '右侧' };
-const litLamps = new Set(['scarpa']);
-let selectedObject = 'scarpa';
+const litLamps = new Set(['leafbronzelamp']);
+let selectedObject = 'leafbronzelamp';
 let showAllObjects = true;
 let mode = 'paper';
 let opened = false;

@@ -1,6 +1,6 @@
 # Music Atlas · 摆件收藏
 
-共 32 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+共 36 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
 
 ## 古董设计参考
 
@@ -10,6 +10,15 @@
 - 流线珐琅台扇 · [蒙特利尔美术馆藏 · Airflow 台扇](https://partnersindesign.org/object/table-fan-airflow/)
 
 ## 摆件图集
+
+<table>
+<tr>
+<td align="center"><a href="assets/bugattimirror.png"><img src="assets/bugattimirror.png" alt="嵌饰立镜" width="104"><br>嵌饰立镜</a></td>
+<td align="center"><a href="assets/leafbronzelamp.png"><img src="assets/leafbronzelamp.png" alt="三足叶形灯" width="104"><br>三足叶形灯</a></td>
+<td align="center"><a href="assets/whitehandwheel.png"><img src="assets/whitehandwheel.png" alt="手轮缝纫机" width="104"><br>手轮缝纫机</a></td>
+<td align="center"><a href="assets/buffachair.png"><img src="assets/buffachair.png" alt="胡桃木扶手椅" width="104"><br>胡桃木扶手椅</a></td>
+</tr>
+</table>
 
 <table>
 <tr>
