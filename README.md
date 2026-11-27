@@ -1,8 +1,8 @@
 # Music Atlas · 摆件收藏
 
-共 36 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+共 40 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
 
-本仓库收录 52 件摆件。下方展示 36 件，另外 16 件可在[往批摆件归档](archive/)中下载。
+本仓库收录 56 件摆件。下方展示 40 件，另外 16 件可在[往批摆件归档](archive/)中下载。
 
 ## 古董设计参考
 
@@ -12,6 +12,15 @@
 - 流线珐琅台扇 · [蒙特利尔美术馆藏 · Airflow 台扇](https://partnersindesign.org/object/table-fan-airflow/)
 
 ## 摆件图集
+
+<table>
+<tr>
+<td align="center"><a href="assets/ruhlmann.png"><img src="assets/ruhlmann.png" alt="乌木边柜" width="104"><br>乌木边柜</a></td>
+<td align="center"><a href="assets/clusterlamp.png"><img src="assets/clusterlamp.png" alt="棱镜集群灯" width="104"><br>棱镜集群灯</a></td>
+<td align="center"><a href="assets/muranocup.png"><img src="assets/muranocup.png" alt="条纹玻璃咖啡杯" width="104"><br>条纹玻璃咖啡杯</a></td>
+<td align="center"><a href="assets/hookstand.png"><img src="assets/hookstand.png" alt="折钢唱片支架" width="104"><br>折钢唱片支架</a></td>
+</tr>
+</table>
 
 <table>
 <tr>

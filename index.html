@@ -192,6 +192,10 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="leafbronzelamp"] { --height: 37%; --width: 22%; }
 .ornament-slot[data-item="whitehandwheel"] { --height: 21%; --width: 25%; }
 .ornament-slot[data-item="buffachair"] { --height: 29%; --width: 23%; }
+.ornament-slot[data-item="ruhlmann"] { --height: 29%; --width: 24%; }
+.ornament-slot[data-item="clusterlamp"] { --height: 36%; --width: 24%; }
+.ornament-slot[data-item="muranocup"] { --height: 18%; --width: 22%; }
+.ornament-slot[data-item="hookstand"] { --height: 24%; --width: 23%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -222,6 +226,8 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="scarpa"][data-lit="true"] img { filter: brightness(1.23) drop-shadow(0 0 11px #ffd59982); }
 .lamp-glow[data-tone="bronze"] { --core: #ffd58c65; --falloff: #c78f4b2c; }
 .ornament-slot[data-item="leafbronzelamp"][data-lit="true"] img { filter: brightness(1.17) drop-shadow(0 0 12px #ffd28f80); }
+.lamp-glow[data-tone="prism"] { --core: #f3e8c575; --falloff: #d3c4a12f; }
+.ornament-slot[data-item="clusterlamp"][data-lit="true"] img { filter: brightness(1.23) drop-shadow(0 0 12px #fff0ca86); }
 .lamp-glow[data-tone="soft"] { --core: #f6ebc664; --falloff: #e8dfbf30; }
 [data-mode="objects"] { --side-offset: 19%; --ground: 13%; --size: min(50%, 304px); align-self: start; }
 [data-mode="objects"] .workspace {
@@ -372,6 +378,23 @@ const variants = {
   }
 };
 const objects = {
+  ruhlmann: {
+    name: "乌木边柜", description: "从收藏标题里的 Ruhlmann 边柜出发，用对称木纹、收窄的柜腿和小菱形嵌饰做成原创缩尺柜。",
+    image: 'assets/ruhlmann.png'
+  },
+  clusterlamp: {
+    name: "棱镜集群灯", description: "从 Holophane / Ritter 牙医集群灯的收藏标题出发，把三个棱纹玻璃灯头聚在一根可见关节的支臂上。",
+    light: 'prism',
+    image: 'assets/clusterlamp.png'
+  },
+  muranocup: {
+    name: "条纹玻璃咖啡杯", description: "从收藏标题里的 1970 年代意大利 Murano 古董咖啡杯出发，用琥珀玻璃与深浅色条做一套小杯碟。",
+    image: 'assets/muranocup.png'
+  },
+  hookstand: {
+    name: "折钢唱片支架", description: "从 The Row 巴黎店收藏笔记里的 Charlotte Perriand 衣帽钩借形，让弯折的钢件露出与胡桃木底座的连接。",
+    image: 'assets/hookstand.png'
+  },
   bugattimirror: {
     name: "嵌饰立镜", description: "从约 1900 年 Carlo Bugatti 镜子的收藏笔记借用乌木、羊皮纸和金属嵌饰。窄框立起，让镜面在唱片旁保留一条亮边。",
     image: 'assets/bugattimirror.png'
@@ -527,7 +550,7 @@ const objects = {
     image: 'assets/murano.png'
   }
 };
-const newestObjects = new Set(["bugattimirror", "leafbronzelamp", "whitehandwheel", "buffachair"]);
+const newestObjects = new Set(["ruhlmann", "clusterlamp", "muranocup", "hookstand"]);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -556,10 +579,10 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'whitehandwheel', right: 'leafbronzelamp' };
+const shelf = { left: 'ruhlmann', right: 'clusterlamp' };
 const sideNames = { left: '左侧', right: '右侧' };
-const litLamps = new Set(['leafbronzelamp']);
-let selectedObject = 'leafbronzelamp';
+const litLamps = new Set(['clusterlamp']);
+let selectedObject = 'clusterlamp';
 let showAllObjects = true;
 let mode = 'paper';
 let opened = false;
