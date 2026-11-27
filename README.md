@@ -1,6 +1,15 @@
 # Music Atlas · 摆件收藏
 
-共 36 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+共 40 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+
+<table>
+<tr>
+<td align="center"><a href="assets/opaline.png"><img src="assets/opaline.png" alt="乳白玻璃灯" width="104"><br>乳白玻璃灯</a></td>
+<td align="center"><a href="assets/paulownia.png"><img src="assets/paulownia.png" alt="桐木匣" width="104"><br>桐木匣</a></td>
+<td align="center"><a href="assets/murano.png"><img src="assets/murano.png" alt="蓝绿玻璃结" width="104"><br>蓝绿玻璃结</a></td>
+<td align="center"><a href="assets/parchment.png"><img src="assets/parchment.png" alt="羊皮纸小屏" width="104"><br>羊皮纸小屏</a></td>
+</tr>
+</table>
 
 <table>
 <tr>

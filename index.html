@@ -192,6 +192,10 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="plumtray"] { --height: 13%; --width: 25%; }
 .ornament-slot[data-item="porcelainloop"] { --height: 28%; --width: 24%; }
 .ornament-slot[data-item="facetpitcher"] { --height: 23%; --width: 18%; }
+.ornament-slot[data-item="opaline"] { --height: 34%; --width: 23%; }
+.ornament-slot[data-item="paulownia"] { --height: 25%; --width: 24%; }
+.ornament-slot[data-item="murano"] { --height: 25%; --width: 22%; }
+.ornament-slot[data-item="parchment"] { --height: 30%; --width: 26%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -216,6 +220,8 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .lamp-glow[data-side="right"] { --glow-x: calc(100% - var(--side-offset)); }
 .lamp-glow[data-tone] { opacity: 1; }
 .lamp-glow[data-tone="cool"] { --core: #d6eeff4b; --falloff: #adcbdf22; }
+.lamp-glow[data-tone="opal"] { --core: #f5f0da72; --falloff: #d9e8d929; }
+.ornament-slot[data-item="opaline"][data-lit="true"] img { filter: brightness(1.17) drop-shadow(0 0 14px #fcf4db80); }
 .lamp-glow[data-tone="soft"] { --core: #f6ebc664; --falloff: #e8dfbf30; }
 [data-mode="objects"] { --side-offset: 19%; --ground: 13%; --size: min(50%, 304px); align-self: start; }
 [data-mode="objects"] .workspace {
@@ -511,9 +517,26 @@ const objects = {
   facetpitcher: {
     name: "切面公道杯", description: "从万花筒公道杯的收藏线索借来几何感，让釉光集中在黑色胎体的转折处。",
     image: 'assets/facetpitcher.png'
+  },
+  opaline: {
+    name: "乳白玻璃灯", description: "乳白玻璃碟搭在橄榄色石座上，点亮后能看见漫开的微暖白光。",
+    light: 'opal',
+    image: 'assets/opaline.png'
+  },
+  paulownia: {
+    name: "桐木匣", description: "把木盒收藏延伸成一只带榫口的浅色小匣，半开的盖子露出内壁。",
+    image: 'assets/paulownia.png'
+  },
+  murano: {
+    name: "蓝绿玻璃结", description: "从吹制玻璃收藏里提取蓝绿玻璃的叠色，让弯曲的玻璃带围出透空。",
+    image: 'assets/murano.png'
+  },
+  parchment: {
+    name: "羊皮纸小屏", description: "用深木细框撑起三扇暖色纸面，让浅褶和半透明边缘在木架上可见。",
+    image: 'assets/parchment.png'
   }
 };
-const newestObjects = new Set(['phonostage', 'plumtray', 'porcelainloop', 'facetpitcher']);
+const newestObjects = new Set(['opaline', 'paulownia', 'murano', 'parchment']);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -541,10 +564,10 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'phonostage', right: 'porcelainloop' };
+const shelf = { left: 'murano', right: 'opaline' };
 const sideNames = { left: '左侧', right: '右侧' };
-const litLamps = new Set();
-let selectedObject = 'porcelainloop';
+const litLamps = new Set(['opaline']);
+let selectedObject = 'opaline';
 let showAllObjects = true;
 let mode = 'paper';
 let opened = false;
