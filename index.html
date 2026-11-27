@@ -184,6 +184,10 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="rohdeclock"] { --height: 32%; --width: 23%; }
 .ornament-slot[data-item="hoffmannink"] { --height: 20%; --width: 23%; }
 .ornament-slot[data-item="airflow"] { --height: 36%; --width: 24%; }
+.ornament-slot[data-item="scarpa"] { --height: 22%; --width: 25%; }
+.ornament-slot[data-item="bugattibase"] { --height: 17%; --width: 25%; }
+.ornament-slot[data-item="cantu"] { --height: 31%; --width: 24%; }
+.ornament-slot[data-item="musebronze"] { --height: 29%; --width: 22%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -210,6 +214,8 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .lamp-glow[data-tone="cool"] { --core: #d6eeff4b; --falloff: #adcbdf22; }
 .lamp-glow[data-tone="opal"] { --core: #f5f0da72; --falloff: #d9e8d929; }
 .ornament-slot[data-item="opaline"][data-lit="true"] img { filter: brightness(1.17) drop-shadow(0 0 14px #fcf4db80); }
+.lamp-glow[data-tone="venetian"] { --core: #ffcb7e62; --falloff: #e7a15c29; }
+.ornament-slot[data-item="scarpa"][data-lit="true"] img { filter: brightness(1.23) drop-shadow(0 0 11px #ffd59982); }
 .lamp-glow[data-tone="soft"] { --core: #f6ebc664; --falloff: #e8dfbf30; }
 [data-mode="objects"] { --side-offset: 19%; --ground: 13%; --size: min(50%, 304px); align-self: start; }
 [data-mode="objects"] .workspace {
@@ -360,6 +366,23 @@ const variants = {
   }
 };
 const objects = {
+  scarpa: {
+    name: "威尼斯玻璃灯", description: "从 Carlo Scarpa 与 Venini 的玻璃、黄铜灯具借材质。用低矮的肋纹玻璃罩配黄铜托架，点亮时可以看灯罩边缘的光。",
+    light: 'venetian',
+    image: 'assets/scarpa.png'
+  },
+  bugattibase: {
+    name: "嵌饰唱片托", description: "从 Carlo Bugatti 边桌提取深木、浅色嵌面与金属接缝，缩成一座带卡槽的小托座。",
+    image: 'assets/bugattibase.png'
+  },
+  cantu: {
+    name: "意式矮展柜", description: "从意大利 La Permanente di Cantù 木制书柜的收藏参考出发，改成三格错落的小型展柜。",
+    image: 'assets/cantu.png'
+  },
+  musebronze: {
+    name: "铸铜日环", description: "从 Filippo Carandini《Muse》系列的砂模铸铜与天文意象出发，做成一件带错位圆盘的青铜立件。",
+    image: 'assets/musebronze.png'
+  },
   catalin: {
     name: "琥珀树脂收音机", description: "取材于 1930 至 1940 年代美国 Catalin 台式收音机。用琥珀色树脂、酒红边带和横向扬声器格栅强调流线。",
     source: ["SFO Museum · On the Radio", "https://www.sfomuseum.org/exhibitions/radio/gallery"],
@@ -481,7 +504,7 @@ const objects = {
     image: 'assets/murano.png'
   }
 };
-const newestObjects = new Set(["catalin", "rohdeclock", "hoffmannink", "airflow"]);
+const newestObjects = new Set(["scarpa", "bugattibase", "cantu", "musebronze"]);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -510,10 +533,10 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'catalin', right: 'airflow' };
+const shelf = { left: 'musebronze', right: 'scarpa' };
 const sideNames = { left: '左侧', right: '右侧' };
-const litLamps = new Set();
-let selectedObject = 'catalin';
+const litLamps = new Set(['scarpa']);
+let selectedObject = 'scarpa';
 let showAllObjects = true;
 let mode = 'paper';
 let opened = false;
@@ -658,7 +681,7 @@ function selectMode(tab) {
   if (!showObjects) sourceLink.hidden = true;
   cardInfo.hidden = showObjects;
   objectInfo.hidden = !showObjects;
-  studyTip.textContent = showObjects ? '摆件为原创造型。馆藏链接可查看设计参考。' : '可点击封套，也可向右拖出。Esc 放回。';
+  studyTip.textContent = showObjects ? '摆件为原创试摆造型。' : '可点击封套，也可向右拖出。Esc 放回。';
   renderObjects();
   if (!showObjects) {
     const variant = variants[mode];

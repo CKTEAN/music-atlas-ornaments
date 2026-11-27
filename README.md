@@ -1,6 +1,6 @@
 # Music Atlas · 摆件收藏
 
-共 28 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+共 32 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
 
 ## 古董设计参考
 
@@ -10,6 +10,15 @@
 - 流线珐琅台扇 · [蒙特利尔美术馆藏 · Airflow 台扇](https://partnersindesign.org/object/table-fan-airflow/)
 
 ## 摆件图集
+
+<table>
+<tr>
+<td align="center"><a href="assets/scarpa.png"><img src="assets/scarpa.png" alt="威尼斯玻璃灯" width="104"><br>威尼斯玻璃灯</a></td>
+<td align="center"><a href="assets/bugattibase.png"><img src="assets/bugattibase.png" alt="嵌饰唱片托" width="104"><br>嵌饰唱片托</a></td>
+<td align="center"><a href="assets/cantu.png"><img src="assets/cantu.png" alt="意式矮展柜" width="104"><br>意式矮展柜</a></td>
+<td align="center"><a href="assets/musebronze.png"><img src="assets/musebronze.png" alt="铸铜日环" width="104"><br>铸铜日环</a></td>
+</tr>
+</table>
 
 <table>
 <tr>
