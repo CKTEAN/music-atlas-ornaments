@@ -154,18 +154,11 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-side="left"] { left: var(--side-offset); transform: translateX(-50%); }
 .ornament-slot[data-side="right"] { right: var(--side-offset); transform: translateX(50%); }
 .ornament-slot[data-item="lamp"] { --height: 29%; }
-.ornament-slot[data-item="lacquer"] { --height: 16%; --width: 27%; }
-.ornament-slot[data-item="celadon"] { --height: 23%; --width: 20%; }
 .ornament-slot[data-item="turntable"] { --height: 20%; --width: 30%; }
-.ornament-slot[data-item="inlay"] { --height: 18%; --width: 17%; }
-.ornament-slot[data-item="marbled"] { --height: 28%; --width: 17%; }
 .ornament-slot[data-item="chrome"] { --height: 34%; --width: 22%; }
-.ornament-slot[data-item="lotus"] { --height: 21%; --width: 17%; }
-.ornament-slot[data-item="mukozuke"] { --height: 13%; --width: 26%; }
 .ornament-slot[data-item="crab"] { --height: 17%; --width: 24%; }
 .ornament-slot[data-item="bronze"] { --height: 36%; --width: 19%; }
 .ornament-slot[data-item="speaker"] { --height: 33%; --width: 22%; }
-.ornament-slot[data-item="caddy"] { --height: 22%; --width: 18%; }
 .ornament-slot[data-item="censer"] { --height: 21%; --width: 19%; }
 .ornament-slot[data-item="bookend"] {
   --height: 22%; --width: 20%;
@@ -175,27 +168,22 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="wavebox"] { --height: 18%; --width: 25%; }
 .ornament-slot[data-item="pleat"] { --height: 33%; --width: 20%; }
 .ornament-slot[data-item="flask"] { --height: 28%; --width: 17%; }
-.ornament-slot[data-item="cane"] { --height: 21%; --width: 23%; }
 .ornament-slot[data-item="recordbin"] { --height: 25%; --width: 26%; }
-.ornament-slot[data-item="facetbowl"] { --height: 15%; --width: 21%; }
 .ornament-slot[data-item="lava"] { --height: 26%; --width: 19%; }
 .ornament-slot[data-item="medal"] { --height: 26%; --width: 18%; }
 .ornament-slot[data-item="linenlamp"] { --height: 35%; --width: 22%; }
 .ornament-slot[data-item="cassettes"] { --height: 18%; --width: 25%; }
-.ornament-slot[data-item="mirrorweight"] { --height: 13%; --width: 21%; }
 .ornament-slot[data-item="drapery"] { --height: 30%; --width: 20%; }
 .ornament-slot[data-item="eggshell"] { --height: 32%; --width: 25%; }
 .ornament-slot[data-item="puck"] { --height: 12%; --width: 20%; }
 .ornament-slot[data-item="ewer"] { --height: 31%; --width: 18%; }
-.ornament-slot[data-item="cubby"] { --height: 20%; --width: 25%; }
-.ornament-slot[data-item="phonostage"] { --height: 13%; --width: 25%; }
-.ornament-slot[data-item="plumtray"] { --height: 13%; --width: 25%; }
 .ornament-slot[data-item="porcelainloop"] { --height: 28%; --width: 24%; }
-.ornament-slot[data-item="facetpitcher"] { --height: 23%; --width: 18%; }
 .ornament-slot[data-item="opaline"] { --height: 34%; --width: 23%; }
-.ornament-slot[data-item="paulownia"] { --height: 25%; --width: 24%; }
 .ornament-slot[data-item="murano"] { --height: 25%; --width: 22%; }
-.ornament-slot[data-item="parchment"] { --height: 30%; --width: 26%; }
+.ornament-slot[data-item="catalin"] { --height: 24%; --width: 27%; }
+.ornament-slot[data-item="rohdeclock"] { --height: 32%; --width: 23%; }
+.ornament-slot[data-item="hoffmannink"] { --height: 20%; --width: 23%; }
+.ornament-slot[data-item="airflow"] { --height: 36%; --width: 24%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -277,6 +265,7 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
   [data-mode="objects"] { --size: min(50%, 260px); --ground: 15%; }
   .tabs button { padding-inline: clamp(6px, 2.4vw, 12px); }
 }
+.asset-links { display: flex; flex-wrap: wrap; gap: .6rem 1rem; }
 </style>
 </head>
 <body>
@@ -355,7 +344,7 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
   </section>
   <footer class="footer">
     <span id="study-tip">可点击封套，也可向右拖出。Esc 放回。</span>
-    <a id="download-object" download>下载当前摆件 PNG</a>
+    <span class="asset-links"><a id="object-source" target="_blank" rel="noopener noreferrer" hidden>设计参考</a><a id="download-object" download>下载当前摆件 PNG</a></span>
   </footer>
 </main>
 <script>
@@ -371,6 +360,26 @@ const variants = {
   }
 };
 const objects = {
+  catalin: {
+    name: "琥珀树脂收音机", description: "取材于 1930 至 1940 年代美国 Catalin 台式收音机。用琥珀色树脂、酒红边带和横向扬声器格栅强调流线。",
+    source: ["SFO Museum · On the Radio", "https://www.sfomuseum.org/exhibitions/radio/gallery"],
+    image: 'assets/catalin.png'
+  },
+  rohdeclock: {
+    name: "装饰艺术座钟", description: "取材于 Gilbert Rohde 约 1933 年的电钟。把烟色圆表盘架在斜向镀铬支撑与黑色阶梯底座上。",
+    source: ["大都会艺术博物馆 · Gilbert Rohde 座钟", "https://www.metmuseum.org/art/collection/search/490893"],
+    image: 'assets/rohdeclock.png'
+  },
+  hoffmannink: {
+    name: "维也纳格栅墨水座", description: "取材于 Josef Hoffmann 约 1910 年的格栅墨水座。原创造型以深色黄铜和玻璃重组方格与方盒。",
+    source: ["大都会艺术博物馆 · Josef Hoffmann 墨水座", "https://www.metmuseum.org/art/collection/search/481693"],
+    image: 'assets/hoffmannink.png'
+  },
+  airflow: {
+    name: "流线珐琅台扇", description: "取材于 Robert Heller 的 1937 年 Airflow 台扇，用弧形底座和深绿珐琅机身表现流线轮廓。",
+    source: ["蒙特利尔美术馆藏 · Airflow 台扇", "https://partnersindesign.org/object/table-fan-airflow/"],
+    image: 'assets/airflow.png'
+  },
   stone: {
     name: '太湖石', description: '从孔洞和不规则边缘借形。灰石的镂空会随相邻物件显出不同层次。',
     image: 'assets/stone.png'
@@ -380,38 +389,14 @@ const objects = {
     light: 'warm',
     image: 'assets/lamp.png'
   },
-  lacquer: {
-    name: '漆作托', description: '从漆作香插的索引借来流动的轮廓。低位陈列让封面保留完整的视线。',
-    image: 'assets/lacquer.png'
-  },
-  celadon: {
-    name: '青绿几何', description: '从青绿几何雕塑的索引提取色相和切面，做成一块带青釉质感的小体量摆件。',
-    image: 'assets/celadon.png'
-  },
   turntable: {
     name: '黑胶唱机', description: '低矮的乌木色机身保留盘面、唱臂与唱标，适合放在正在浏览的唱片旁。',
     image: 'assets/turntable.png'
-  },
-  inlay: {
-    name: '象嵌杯', description: '从象嵌纹杯的收藏索引借来浅线嵌入深色胎体的做法。',
-    image: 'assets/inlay.png'
-  },
-  marbled: {
-    name: '玻璃花器', description: '以烟紫色云纹和乳白玻璃表现纹理变化。细颈适合填补唱片侧边的纵向留白。',
-    image: 'assets/marbled.png'
   },
   chrome: {
     name: '镀铬台灯', description: '取 Elio Martinelli 收藏帖里的镀铬材质做一盏细臂灯，开灯可试偏冷的照明。',
     light: 'cool',
     image: 'assets/chrome.png'
-  },
-  lotus: {
-    name: '莲苞杯', description: '用浅青透明玻璃和微鼓的瓣形起伏，表现薄边与厚底的透光差异。',
-    image: 'assets/lotus.png'
-  },
-  mukozuke: {
-    name: '陶瓷向付', description: '把向付的浅承托面与折角借到架上。釉色和火痕为样机设计。',
-    image: 'assets/mukozuke.png'
   },
   crab: {
     name: '银蟹盒', description: '从银质螃蟹置物盒的收藏索引借形。低位陈列，让细足和银壳的亮面留在视线下方。',
@@ -424,10 +409,6 @@ const objects = {
   speaker: {
     name: '书架音箱', description: '从音响收藏延伸出胡桃木箱体和织物网罩，试摆在唱片旁看体量。',
     image: 'assets/speaker.png'
-  },
-  caddy: {
-    name: '茶叶罐', description: '从日本茶器的收藏线索出发，用暖红色木纹和细盖缝做一个低圆柱罐。',
-    image: 'assets/caddy.png'
   },
   censer: {
     name: '镂空香炉', description: '从被中香炉的收藏线索出发，用带细孔的暗黄铜球和浅托架做成小摆件。',
@@ -449,17 +430,9 @@ const objects = {
     name: '银化玻璃瓶', description: '从古罗马玻璃香水瓶的收藏线索借来细颈轮廓，用淡蓝玻璃和银紫色反光表现表面。',
     image: 'assets/flask.png'
   },
-  cane: {
-    name: '藤编矮凳', description: '把藤编椅收藏里的网眼和木腿缩成架上的小凳，让透空的编织纹理留在唱片旁。',
-    image: 'assets/cane.png'
-  },
   recordbin: {
     name: '翻片箱', description: '从爵士唱片店的收藏线索出发，把高低错落的纸封套做成一组小比例陈列。',
     image: 'assets/recordbin.png'
-  },
-  facetbowl: {
-    name: '切面玻璃碗', description: '从萨珊琉璃收藏借来厚玻璃的意象，试用琥珀色和连续切面留住边缘高光。',
-    image: 'assets/facetbowl.png'
   },
   lava: {
     name: '火山釉陶瓶', description: '以中古陶瓶收藏为起点，用炭灰胎和带针孔的赭黄釉做出明暗分层。',
@@ -478,10 +451,6 @@ const objects = {
     name: '磁带架', description: '从音乐收纳的收藏线索延伸出一只铝托，斜立的磁带露出两个卷盘。',
     image: 'assets/cassettes.png'
   },
-  mirrorweight: {
-    name: '银镜镇纸', description: '借用暗房收藏里的银镜与结晶意象，让反光和细纹沿透明玻璃的一边浮现。',
-    image: 'assets/mirrorweight.png'
-  },
   drapery: {
     name: '覆布石雕', description: '从雕塑收藏中提取下垂的布褶，用浅色石材表现垂坠的重量和阴影。',
     image: 'assets/drapery.png'
@@ -498,45 +467,21 @@ const objects = {
     name: '水晶执壶', description: '取水晶执壶收藏里的通透瓶身和金色金属组合，用清浅的切面保留瓶体反光。',
     image: 'assets/ewer.png'
   },
-  cubby: {
-    name: '双孔石格', description: '从家具收藏里的书架线索缩出一座矮格架，让两个贯通的孔洞露出身后的木架。',
-    image: 'assets/cubby.png'
-  },
-  phonostage: {
-    name: "铝面唱放", description: "从黑胶系统的收藏线索出发，把唱放缩成一块带胡桃木侧板的铝面机身。",
-    image: 'assets/phonostage.png'
-  },
-  plumtray: {
-    name: "梅形金箔托", description: "用五瓣浅边围住磨旧的金箔表面，试摆时让低矮的器物留在唱片下缘。",
-    image: 'assets/plumtray.png'
-  },
   porcelainloop: {
     name: "交环瓷雕", description: "从陶艺收藏延伸出一对斜交的瓷环。透过两个孔洞可以看见架后的明暗。",
     image: 'assets/porcelainloop.png'
-  },
-  facetpitcher: {
-    name: "切面公道杯", description: "从万花筒公道杯的收藏线索借来几何感，让釉光集中在黑色胎体的转折处。",
-    image: 'assets/facetpitcher.png'
   },
   opaline: {
     name: "乳白玻璃灯", description: "乳白玻璃碟搭在橄榄色石座上，点亮后能看见漫开的微暖白光。",
     light: 'opal',
     image: 'assets/opaline.png'
   },
-  paulownia: {
-    name: "桐木匣", description: "把木盒收藏延伸成一只带榫口的浅色小匣，半开的盖子露出内壁。",
-    image: 'assets/paulownia.png'
-  },
   murano: {
     name: "蓝绿玻璃结", description: "从吹制玻璃收藏里提取蓝绿玻璃的叠色，让弯曲的玻璃带围出透空。",
     image: 'assets/murano.png'
-  },
-  parchment: {
-    name: "羊皮纸小屏", description: "用深木细框撑起三扇暖色纸面，让浅褶和半透明边缘在木架上可见。",
-    image: 'assets/parchment.png'
   }
 };
-const newestObjects = new Set(['opaline', 'paulownia', 'murano', 'parchment']);
+const newestObjects = new Set(["catalin", "rohdeclock", "hoffmannink", "airflow"]);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -550,6 +495,7 @@ const face = document.querySelector('#face-indicator');
 const description = document.querySelector('#description');
 const edition = document.querySelector('#edition-detail');
 const downloadObject = document.querySelector('#download-object');
+const sourceLink = document.querySelector('#object-source');
 const announcement = document.querySelector('#announcement');
 const cardInfo = document.querySelector('#card-info');
 const objectInfo = document.querySelector('.object-info');
@@ -564,10 +510,10 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'murano', right: 'opaline' };
+const shelf = { left: 'catalin', right: 'airflow' };
 const sideNames = { left: '左侧', right: '右侧' };
-const litLamps = new Set(['opaline']);
-let selectedObject = 'opaline';
+const litLamps = new Set();
+let selectedObject = 'catalin';
 let showAllObjects = true;
 let mode = 'paper';
 let opened = false;
@@ -604,6 +550,12 @@ function renderObjects() {
     button.hidden = !showAllObjects && !newestObjects.has(button.dataset.object);
   }
   const item = objects[selectedObject];
+  sourceLink.hidden = !item.source;
+  if (item.source) {
+    const [label, href] = item.source;
+    sourceLink.href = href;
+    sourceLink.textContent = label + ' ↗';
+  }
   downloadObject.href = item.image;
   downloadObject.download = item.name + '.png';
   objectDescription.textContent = item.description;
@@ -703,9 +655,10 @@ function selectMode(tab) {
   const showObjects = mode === 'objects';
   studyTitle.textContent = showObjects ? '摆件收藏' : '把唱片拿在手里';
   downloadObject.hidden = !showObjects;
+  if (!showObjects) sourceLink.hidden = true;
   cardInfo.hidden = showObjects;
   objectInfo.hidden = !showObjects;
-  studyTip.textContent = showObjects ? '摆件为原创样机造型。唱片仍可抽取与翻面。' : '可点击封套，也可向右拖出。Esc 放回。';
+  studyTip.textContent = showObjects ? '摆件为原创造型。馆藏链接可查看设计参考。' : '可点击封套，也可向右拖出。Esc 放回。';
   renderObjects();
   if (!showObjects) {
     const variant = variants[mode];
