@@ -1,6 +1,6 @@
 # Music Atlas · 摆件收藏
 
-共 30 件透明底 PNG。01–26 在展示页，27–30 单独归档。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+共 34 件透明底 PNG。01–26 与 31–34 在展示页，27–30 单独归档。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
 
 ## 古董设计参考
 
@@ -66,6 +66,17 @@
 <tr>
 <td align="center"><a href="assets/ewer.png"><img src="assets/ewer.png" alt="25 · 水晶执壶" width="104"><br>25 · 水晶执壶</a></td>
 <td align="center"><a href="assets/opaline.png"><img src="assets/opaline.png" alt="26 · 乳白玻璃灯" width="104"><br>26 · 乳白玻璃灯</a></td>
+</tr>
+</table>
+
+## 31–34 · 新增展示
+
+<table>
+<tr>
+<td align="center"><a href="assets/ghosthorse.png"><img src="assets/ghosthorse.png" alt="31 · 悬吊幽灵马" width="104"><br>31 · 悬吊幽灵马</a></td>
+<td align="center"><a href="assets/silverarc.png"><img src="assets/silverarc.png" alt="32 · 银弧立件" width="104"><br>32 · 银弧立件</a></td>
+<td align="center"><a href="assets/gardenframe.png"><img src="assets/gardenframe.png" alt="33 · 园林透景框" width="104"><br>33 · 园林透景框</a></td>
+<td align="center"><a href="assets/maskstand.png"><img src="assets/maskstand.png" alt="34 · 斜置剧场面具" width="104"><br>34 · 斜置剧场面具</a></td>
 </tr>
 </table>
 
