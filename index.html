@@ -188,6 +188,10 @@ h2 { margin: 11px 0 9px; font-size: clamp(22px, 3vw, 32px); font-weight: 550; li
 .ornament-slot[data-item="puck"] { --height: 12%; --width: 20%; }
 .ornament-slot[data-item="ewer"] { --height: 31%; --width: 18%; }
 .ornament-slot[data-item="cubby"] { --height: 20%; --width: 25%; }
+.ornament-slot[data-item="phonostage"] { --height: 13%; --width: 25%; }
+.ornament-slot[data-item="plumtray"] { --height: 13%; --width: 25%; }
+.ornament-slot[data-item="porcelainloop"] { --height: 28%; --width: 24%; }
+.ornament-slot[data-item="facetpitcher"] { --height: 23%; --width: 18%; }
 .ornament-slot[data-item]::before {
   content: ""; position: absolute; left: 15%; right: 15%; bottom: 1%;
   height: 13%; border-radius: 50%; background: #1b130c97; filter: blur(7px);
@@ -491,9 +495,25 @@ const objects = {
   cubby: {
     name: '双孔石格', description: '从家具收藏里的书架线索缩出一座矮格架，让两个贯通的孔洞露出身后的木架。',
     image: 'assets/cubby.png'
+  },
+  phonostage: {
+    name: "铝面唱放", description: "从黑胶系统的收藏线索出发，把唱放缩成一块带胡桃木侧板的铝面机身。",
+    image: 'assets/phonostage.png'
+  },
+  plumtray: {
+    name: "梅形金箔托", description: "用五瓣浅边围住磨旧的金箔表面，试摆时让低矮的器物留在唱片下缘。",
+    image: 'assets/plumtray.png'
+  },
+  porcelainloop: {
+    name: "交环瓷雕", description: "从陶艺收藏延伸出一对斜交的瓷环。透过两个孔洞可以看见架后的明暗。",
+    image: 'assets/porcelainloop.png'
+  },
+  facetpitcher: {
+    name: "切面公道杯", description: "从万花筒公道杯的收藏线索借来几何感，让釉光集中在黑色胎体的转折处。",
+    image: 'assets/facetpitcher.png'
   }
 };
-const newestObjects = new Set(['eggshell', 'puck', 'ewer', 'cubby']);
+const newestObjects = new Set(['phonostage', 'plumtray', 'porcelainloop', 'facetpitcher']);
 const tabs = [...document.querySelectorAll('[role="tab"]')];
 const panel = document.querySelector('#study-panel');
 const stage = document.querySelector('.stage');
@@ -521,10 +541,10 @@ const glows = [...document.querySelectorAll('.lamp-glow')];
 const placeButtons = [...document.querySelectorAll('[data-place]')];
 const removeObject = document.querySelector('#remove-object');
 const switchLamp = document.querySelector('#switch-lamp');
-const shelf = { left: 'eggshell', right: 'ewer' };
+const shelf = { left: 'phonostage', right: 'porcelainloop' };
 const sideNames = { left: '左侧', right: '右侧' };
 const litLamps = new Set();
-let selectedObject = 'eggshell';
+let selectedObject = 'porcelainloop';
 let showAllObjects = true;
 let mode = 'paper';
 let opened = false;

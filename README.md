@@ -1,6 +1,15 @@
 # Music Atlas · 摆件收藏
 
-共 32 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+共 36 件透明底 PNG。点图可打开原图。下载仓库并解压，打开 [index.html](index.html) 即可离线试摆。
+
+<table>
+<tr>
+<td align="center"><a href="assets/phonostage.png"><img src="assets/phonostage.png" alt="铝面唱放" width="104"><br>铝面唱放</a></td>
+<td align="center"><a href="assets/plumtray.png"><img src="assets/plumtray.png" alt="梅形金箔托" width="104"><br>梅形金箔托</a></td>
+<td align="center"><a href="assets/porcelainloop.png"><img src="assets/porcelainloop.png" alt="交环瓷雕" width="104"><br>交环瓷雕</a></td>
+<td align="center"><a href="assets/facetpitcher.png"><img src="assets/facetpitcher.png" alt="切面公道杯" width="104"><br>切面公道杯</a></td>
+</tr>
+</table>
 
 <table>
 <tr>
